@@ -8,15 +8,15 @@ def recept(antal):
     print("Vatten: ", round(1/4*antal) ," dl")
 
 def tidblanda(antal):
-    tid = 10 + antal
-    return tid
+    förberedelsetid = 10 + antal
+    return förberedelsetid
 
 def tidgrädda(antal):
-    tid = 30 + antal*3
-    return tid
+    gäddningstid = 30 + antal*3
+    return gäddningstid
 
 def sockerkaka(antal):
-    tid = tidgrädda(antal) + tidgrädda(antal) 
+    tid = tidblanda(antal) + tidgrädda(antal) 
     timmar = tid/60
     print("Sockerkaka för ", antal, " personer:")
     print()
