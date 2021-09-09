@@ -5,11 +5,11 @@ def tvarsumman(n):
   else:
     return (n%10) + tvarsumman(n//10)
  
-def tvarsumman2(n): # x //= 3 är samma som x = x // 3
+def tvarsumman2(n): 
     summa = 0
     while n:
-        summa += n % 10
-        n //= 10
+      summa += n % 10 # Resten av n delat på 10 adderas till summan
+      n //= 10 # n = n delat på 10 (heltalsdivision), processen fortsätter tills n = 0 och summan returneras
     return summa
 
 import d0009e_lab2_sumTest
