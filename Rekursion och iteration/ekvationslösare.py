@@ -11,6 +11,3 @@ def solve(f,x0,h):
             x0 = x1
 
 import d0009e_lab2_solveTest
-
-        
-
