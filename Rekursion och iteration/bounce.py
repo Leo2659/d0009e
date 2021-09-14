@@ -1,5 +1,3 @@
-import math
-
 def bounce(n):
     print(n) #Skriver ut alla tal i den övre delen av bounce ner till 0
 
@@ -10,6 +8,6 @@ def bounce(n):
 def bounce2(n):
     #Skriver ut -n till n där de negativa talen blir positva pga abs(x)
     for x in range(-n, n+1):
-       print(abs(x))
+      print(abs(x))
 
 import d0009e_lab2_bounceTest
