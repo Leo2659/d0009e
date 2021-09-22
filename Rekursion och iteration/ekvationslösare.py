@@ -1,6 +1,10 @@
 def derivative(f,x,h):
     return (1/(2 * h)) * (f(x+h) - f(x-h))    
 
+def f(x):
+      return x**2-1
+
+
 def solve(f,x0,h):
 
     while True:
@@ -9,5 +13,3 @@ def solve(f,x0,h):
             return x1
         else:
             x0 = x1
-
-import d0009e_lab2_solveTest

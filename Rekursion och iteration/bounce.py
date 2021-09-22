@@ -9,5 +9,3 @@ def bounce2(n):
     #Skriver ut -n till n där de negativa talen blir positva pga abs(x)
     for x in range(-n, n+1):
       print(abs(x))
-
-import d0009e_lab2_bounceTest

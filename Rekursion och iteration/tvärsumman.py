@@ -10,5 +10,3 @@ def tvarsumman2(n):
       summa += n % 10 # Resten av n delat på 10 adderas till summan
       n //= 10 # n = n delat på 10 (heltalsdivision), processen fortsätter tills n = 0 och summan returneras
     return summa
-
-import d0009e_lab2_sumTest
