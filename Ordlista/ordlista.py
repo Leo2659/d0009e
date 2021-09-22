@@ -1,4 +1,4 @@
-#---------GENERELLA FUNKTIONER---------#
+#---------MENY---------#
 
 def printMenu():  # Skriver ut menyn
     print()
@@ -69,7 +69,7 @@ def main_dic():  # Main funktionen för list versionen av programmet
 #---------ORDLISTA MED DICTIONARY---------#
 
 
-def main_dic2():  # Huvudfuktionen för dictionary version av programmet
+def main_dic2():  # Huvudfunktionen för dictionary version av programmet
 
     dictionary = {}  # Dictionary med våra ord och förklaringar
 
@@ -102,7 +102,7 @@ def main_dic2():  # Huvudfuktionen för dictionary version av programmet
 #---------ORDLISTA MED TUPLER---------#
 
 
-def main_dic3():  # Huvudfuktionen för tuple versionen av programmet
+def main_dic3():  # Huvudfunktionen för tuple versionen av programmet
 
     tupleList = []
 
