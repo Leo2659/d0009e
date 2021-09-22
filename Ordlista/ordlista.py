@@ -41,7 +41,7 @@ def main_dic():  # Main funktionen för list versionen av programmet
         else:
             # Lägger till ordet och förklaringen om ordet inte finns i listan
             words.append(word)
-            desc = input("Description: ")  # Tar in förklaringen
+            desc = input("Description of word: ")  # Tar in förklaringen
             descriptions.append(desc)
 
     def lookup_dic():  # Anropas om användaren väljer att söka efter ett ord (Val 2)
@@ -78,7 +78,7 @@ def main_dic2():  # Huvudfunktionen för dictionary version av programmet
         if word in dictionary.keys():  # Kollar om ordet matchar en av nycklarna i dictionary
             print("Error: Word already exists!")
         else:  # Lägget till ordet och förklaringen i dictionary
-            desc = input("Description: ")
+            desc = input("Description of word: ")
             dictionary.update({word: desc})
 
     def lookup_dic2():  # Anropas om användaren väljer att söka efter ett ord (Val 2)
@@ -111,7 +111,7 @@ def main_dic3():  # Huvudfunktionen för tuple versionen av programmet
         if isInList(word):  # Kollar om ordet redan finns i listan med funktionen isInList()
             print("Error: Word already exists!")
         else:  # Lägger till ordet och förklaringen om ordet inte finns i listan
-            desc = input("Description: ")
+            desc = input("Description of word: ")
             tupleList.append((word, desc))
 
     def lookup_dic3():  # Anropas om användaren väljer att söka efter ett ord (Val 2)
