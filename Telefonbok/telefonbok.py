@@ -8,7 +8,7 @@ class PhoneBook:
     # -----HJÄLPMETODER----
     def strToList(self, string):
         lst = []
-        lst[:0] = string
+        lst[:] = string
         return lst
 
     def lstToStr(self, lst):
@@ -85,7 +85,7 @@ class PhoneBook:
         file.close()  # Stänger filen
 
     def load(self, filename):  # Metod för att läsa in en telefonbok från fil
-        file = open(filename, "r")  # Öppna fil för skrivning för läsning
+        file = open(filename, "r")  # Öppna fil för läsning
         self.contacts = {}  # Tömmer telefonboken
         for line in file:
             string = line.strip()  # Tar bort alla whitespace innan och efter
@@ -148,5 +148,5 @@ class PhoneBook:
                 continue
 
 
-phoneBook = PhoneBook()  # Skapar en ny instans av klassen Phonebook med namnet phonebook
+phoneBook = PhoneBook()  # Skapar en ny instans av klassen PhoneBook med namnet phoneBook
 phoneBook.main()
