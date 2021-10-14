@@ -7,13 +7,10 @@ class PhoneBook:
 
     # -----HJÄLPMETODER----
     def strToList(self, string):
-        lst = []
-        lst[:] = string
-        return lst
+        return list(string)
 
     def lstToStr(self, lst):
-        string = ''.join(lst)
-        return(string)
+        return ''.join(lst)
 
     def getValue(self, value):
         return self.contacts.get(value)
@@ -29,13 +26,13 @@ class PhoneBook:
         return False
 
     def update(self, name, number):  # Metod för att uppdatera telefonboken
-        self.contacts.update({name: number})
+        self.contacts.update({name:number})
 
     def getArgs(self, arg):  # Metod för att hitta hur många argument ett kommando ska ta
         for x in self.cmds:
             if arg == x[0]:
                 return x[1]
-        raise ValueError  # Kastar ett ValueError om det gått åt skogen
+        raise ValueError  # Kastar ett ValueError argumentet som skickas inte finns
 
     def isInCmd(self, cmd):  # Metod för att kolla om input är ett kommando
         for x in self.cmds:
@@ -67,8 +64,8 @@ class PhoneBook:
         elif self.isInNumbers(numList):
             print(number, "already exists")
         else:
-            value = self.getValue(name)
-            value[:] = numList
+            value = self.getValue(name) # Hämtar listan från personen
+            value[:] = numList # Ersätter värderna i listan med värdena i den nya listan.
             self.update(name, value)
 
     def alias(self, name, name2):  # Metod för att skapa alias
@@ -80,7 +77,7 @@ class PhoneBook:
 
     def save(self, filename):  # Metod för att spara telefonboken till en fil
         file = open(filename, "w")  # Öppna fil för skrivning
-        for x in self.contacts.items():
+        for x in self.contacts.items(): # Får lista av tupler
             file.write(self.lstToStr(x[1]) + ";" + x[0] + ";" + "\n")  # Filformat
         file.close()  # Stänger filen
 
@@ -90,7 +87,7 @@ class PhoneBook:
         for line in file:
             string = line.strip()  # Tar bort alla whitespace innan och efter
             elements = string.split(";") # Splitar strängen vid ";" och gör det till en lista av substrängarna
-            number = self.strToList(elements[0])
+            number = self.strToList(elements[0]) # Vi får nummret som str men vi gör om den till list 
             name = elements[1] 
             self.contacts.update({name: number}) # Uppdatera telefonboken med kontakterna
         file.close()
@@ -136,11 +133,11 @@ class PhoneBook:
                 try:
                     args_taken = self.getArgs(args[0])
                 except ValueError:  # Fångar ValueError från getArgs()
-                    print("Critical Error")
-                    break
+                    print("Command to function 'getArgs' does not exist!")
+                    continue
                 args_given = len(args)-1
                 print("Command", args[0], "takes", args_taken,
-                      "argument.", args_given, "given.")
+                      "argument(s).", args_given, "given.")
                 continue
 
             except FileNotFoundError:  # Fångar FileNotFoundError
